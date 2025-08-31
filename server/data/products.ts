@@ -528,7 +528,7 @@ export const sampleProducts: InsertProduct[] = [
     description: "Smart robot vacuum with mapping technology and app control",
     category: "Home",
     price: 299.99,
-    imageUrl: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+    imageUrl: "https://images.unsplash.com/photo-1577633120488-51d0b96e5509?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
     rating: 4.3,
     reviewCount: 345,
     embeddings: [0.3, 0.9, 0.8, 0.7, 0.6, 1.0, 0.1, 0.2, 0.4, 0.5]
@@ -538,7 +538,7 @@ export const sampleProducts: InsertProduct[] = [
     description: "Ultrasonic humidifier with essential oil diffuser and LED lighting",
     category: "Home",
     price: 59.99,
-    imageUrl: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+    imageUrl: "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
     rating: 4.2,
     reviewCount: 156,
     embeddings: [0.4, 1.0, 0.9, 0.8, 0.7, 0.1, 0.2, 0.3, 0.5, 0.6]
@@ -578,7 +578,7 @@ export const sampleProducts: InsertProduct[] = [
     description: "Ultrasonic essential oil diffuser with color-changing LED lights",
     category: "Home",
     price: 39.99,
-    imageUrl: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+    imageUrl: "https://images.unsplash.com/photo-1546518799-dd0de9b5501c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
     rating: 4.3,
     reviewCount: 123,
     embeddings: [0.8, 0.4, 0.3, 0.2, 0.1, 0.5, 0.6, 0.7, 0.9, 1.0]
@@ -588,7 +588,7 @@ export const sampleProducts: InsertProduct[] = [
     description: "Digital bathroom scale with body composition analysis and app sync",
     category: "Home",
     price: 49.99,
-    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+    imageUrl: "https://images.unsplash.com/photo-1494173853739-c21f58b16055?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
     rating: 4.1,
     reviewCount: 89,
     embeddings: [0.9, 0.5, 0.4, 0.3, 0.2, 0.6, 0.7, 0.8, 1.0, 0.1]

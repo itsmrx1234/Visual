@@ -1,11 +1,13 @@
 import { useState } from "react";
 import Header from "@/components/header";
-import Footer from "@/components/footer";
 import ImageUpload from "@/components/image-upload";
 import ProductGrid from "@/components/product-grid";
 import LoadingOverlay from "@/components/loading-overlay";
-import { Eye, Brain, Database, Zap } from "lucide-react";
+import { Eye } from "lucide-react";
 import { type SearchResult } from "@shared/schema";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Home() {
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
@@ -22,6 +24,42 @@ export default function Home() {
 
   const handleSearchStart = () => {
     setIsSearching(true);
+  };
+
+  const { toast } = useToast();
+
+  const demoSearchMutation = useMutation({
+    mutationFn: async (imageUrl: string) => {
+      const response = await apiRequest('POST', '/api/search/url', {
+        imageUrl,
+        minSimilarity: 0.7,
+        limit: 20,
+      });
+      return response.json();
+    },
+    onSuccess: (data) => {
+      setSearchResults(data.results);
+      setUploadedImage(data.query.imageUrl);
+      setIsSearching(false);
+      toast({
+        title: "Demo Search Complete",
+        description: `Found ${data.results.length} similar products`,
+      });
+    },
+    onError: (error) => {
+      console.error('Demo search failed:', error);
+      setIsSearching(false);
+      toast({
+        title: "Search Failed",
+        description: "Failed to process demo image. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const handleDemoImageClick = (imageUrl: string) => {
+    setIsSearching(true);
+    demoSearchMutation.mutate(imageUrl);
   };
 
   return (
@@ -60,18 +98,21 @@ export default function Home() {
                     alt="Demo handbag" 
                     className="w-full h-20 object-cover rounded-lg cursor-pointer hover:ring-2 hover:ring-primary transition-all"
                     data-testid="demo-image-handbag"
+                    onClick={() => handleDemoImageClick("https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400")}
                   />
                   <img 
                     src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200" 
                     alt="Demo headphones" 
                     className="w-full h-20 object-cover rounded-lg cursor-pointer hover:ring-2 hover:ring-primary transition-all"
                     data-testid="demo-image-headphones"
+                    onClick={() => handleDemoImageClick("https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400")}
                   />
                   <img 
                     src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200" 
                     alt="Demo watch" 
                     className="w-full h-20 object-cover rounded-lg cursor-pointer hover:ring-2 hover:ring-primary transition-all"
                     data-testid="demo-image-watch"
+                    onClick={() => handleDemoImageClick("https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400")}
                   />
                 </div>
                 <p className="text-sm text-muted-foreground">Click any image above to see similar products</p>
@@ -90,45 +131,7 @@ export default function Home() {
         />
       )}
 
-      {/* Features Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold mb-4">Why Choose VisualMatch?</h3>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Powered by advanced AI and machine learning algorithms to deliver the most accurate visual search results
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center space-y-4 animate-fade-in">
-              <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
-                <Brain className="w-8 h-8 text-primary" />
-              </div>
-              <h4 className="text-xl font-semibold">AI-Powered Search</h4>
-              <p className="text-muted-foreground">Advanced neural networks analyze visual features to find the most similar products with high accuracy.</p>
-            </div>
-
-            <div className="text-center space-y-4 animate-fade-in">
-              <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
-                <Database className="w-8 h-8 text-primary" />
-              </div>
-              <h4 className="text-xl font-semibold">Massive Database</h4>
-              <p className="text-muted-foreground">Search through thousands of products across multiple categories including fashion, electronics, and home goods.</p>
-            </div>
-
-            <div className="text-center space-y-4 animate-fade-in">
-              <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
-                <Zap className="w-8 h-8 text-primary" />
-              </div>
-              <h4 className="text-xl font-semibold">Lightning Fast</h4>
-              <p className="text-muted-foreground">Get results in seconds with our optimized search algorithms and cloud infrastructure.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
       
       {isSearching && <LoadingOverlay />}
     </div>

@@ -14,11 +14,11 @@ export default function Header() {
     <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/80 rounded-lg flex items-center justify-center">
-              <Eye className="w-4 h-4 text-primary-foreground" />
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center">
+              <Eye className="w-6 h-6 text-primary-foreground" />
             </div>
-            <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+            <h1 className="text-2xl font-bold text-foreground">
               VisualMatch
             </h1>
           </div>
@@ -35,12 +35,6 @@ export default function Header() {
               ) : (
                 <Moon className="w-5 h-5 text-muted-foreground" />
               )}
-            </Button>
-            <Button 
-              className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium"
-              data-testid="button-get-started"
-            >
-              Get Started
             </Button>
           </div>
         </div>
