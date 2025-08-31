@@ -5,7 +5,8 @@
       "src": "server/index.ts",
       "use": "@vercel/node",
       "config": {
-        "maxLambdaSize": "25mb"
+        "maxLambdaSize": "25mb",
+        "maxDuration": 30
       }
     },
     {
@@ -29,10 +30,5 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist/public",
   "installCommand": "npm install",
-  "framework": null,
-  "functions": {
-    "server/index.ts": {
-      "maxDuration": 30
-    }
-  }
+  "framework": null
 }
