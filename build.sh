@@ -7,9 +7,13 @@ vite build
 echo "Building backend..."
 node build-server.js
 
+echo "Copying backend to api directory..."
+mkdir -p api
+cp dist/index.js api/index.js
+
 echo "Build complete!"
 echo "Frontend built to: dist/public"
-echo "Backend built to: dist/index.js"
+echo "Backend copied to: api/index.js"
 
 # Verify build output
 if [ -d "dist/public" ]; then
@@ -20,9 +24,9 @@ else
     exit 1
 fi
 
-if [ -f "dist/index.js" ]; then
+if [ -f "api/index.js" ]; then
     echo "✓ Backend build successful"
-    ls -la dist/index.js
+    ls -la api/index.js
 else
     echo "✗ Backend build failed"
     exit 1
