@@ -2,7 +2,7 @@ import { build } from 'esbuild';
 import { resolve } from 'path';
 
 await build({
-  entryPoints: ['server/index.ts'],
+  entryPoints: ['server/production.ts'],
   bundle: true,
   platform: 'node',
   target: 'node20',
@@ -16,7 +16,10 @@ await build({
     'bufferutil',
     'utf-8-validate',
     'express',
-    'multer'
+    'multer',
+    'vite',
+    'nanoid',
+    '../vite.config'
   ],
   alias: {
     '@shared': resolve('./shared'),
@@ -27,6 +30,9 @@ await build({
   logLevel: 'info',
   define: {
     'import.meta.dirname': '__dirname'
+  },
+  loader: {
+    '.ts': 'ts'
   }
 });
 

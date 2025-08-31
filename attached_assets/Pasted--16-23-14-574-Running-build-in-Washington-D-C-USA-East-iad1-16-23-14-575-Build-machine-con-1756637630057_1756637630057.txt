@@ -1,0 +1,98 @@
+[16:23:14.574] Running build in Washington, D.C., USA (East) – iad1
+[16:23:14.575] Build machine configuration: 2 cores, 8 GB
+[16:23:14.619] Cloning github.com/itsmrx1234/Visual (Branch: main, Commit: cef507d)
+[16:23:14.738] Previous build caches not available
+[16:23:14.881] Cloning completed: 262.000ms
+[16:23:14.912] Found .vercelignore
+[16:23:14.928] Removed 96 ignored files defined in .vercelignore
+[16:23:14.928]   /.git/config
+[16:23:14.928]   /.git/description
+[16:23:14.928]   /.git/FETCH_HEAD
+[16:23:14.928]   /.git/HEAD
+[16:23:14.928]   /.git/hooks/applypatch-msg.sample
+[16:23:14.928]   /.git/hooks/commit-msg.sample
+[16:23:14.928]   /.git/hooks/fsmonitor-watchman.sample
+[16:23:14.928]   /.git/hooks/post-update.sample
+[16:23:14.928]   /.git/hooks/pre-applypatch.sample
+[16:23:14.929]   /.git/hooks/pre-commit.sample
+[16:23:15.211] Running "vercel build"
+[16:23:15.613] Vercel CLI 46.1.0
+[16:23:16.413] Running "install" command: `npm install`...
+[16:23:19.199] npm warn deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+[16:23:19.694] npm warn deprecated npmlog@5.0.1: This package is no longer supported.
+[16:23:19.924] npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+[16:23:20.782] npm warn deprecated gauge@3.0.2: This package is no longer supported.
+[16:23:20.820] npm warn deprecated are-we-there-yet@2.0.0: This package is no longer supported.
+[16:23:21.695] npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+[16:23:21.913] npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+[16:23:22.030] npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+[16:23:22.082] npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+[16:23:22.104] npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+[16:23:34.498] 
+[16:23:34.499] added 611 packages, and audited 612 packages in 18s
+[16:23:34.499] 
+[16:23:34.500] 71 packages are looking for funding
+[16:23:34.500]   run `npm fund` for details
+[16:23:34.535] 
+[16:23:34.535] 11 vulnerabilities (3 low, 8 moderate)
+[16:23:34.536] 
+[16:23:34.536] To address issues that do not require attention, run:
+[16:23:34.536]   npm audit fix
+[16:23:34.536] 
+[16:23:34.536] To address all issues (including breaking changes), run:
+[16:23:34.536]   npm audit fix --force
+[16:23:34.536] 
+[16:23:34.536] Run `npm audit` for details.
+[16:23:35.922] Building frontend...
+[16:23:36.370] [36mvite v5.4.19 [32mbuilding for production...[36m[39m
+[16:23:36.402] [32m✓[39m 0 modules transformed.
+[16:23:36.404] [31mx[39m Build failed in 12ms
+[16:23:36.404] [31merror during build:
+[16:23:36.404] [31mCould not resolve entry module "index.html".[31m
+[16:23:36.404]     at getRollupError (file:///vercel/path0/node_modules/rollup/dist/es/shared/parseAst.js:396:41)
+[16:23:36.404]     at error (file:///vercel/path0/node_modules/rollup/dist/es/shared/parseAst.js:392:42)
+[16:23:36.405]     at ModuleLoader.loadEntryModule (file:///vercel/path0/node_modules/rollup/dist/es/shared/node-entry.js:20086:20)
+[16:23:36.405]     at async Promise.all (index 0)[39m
+[16:23:36.409] Building backend...
+[16:23:36.489] ✘ [ERROR] Could not resolve "../vite.config"
+[16:23:36.489] 
+[16:23:36.489]     server/vite.ts:6:23:
+[16:23:36.489]       6 │ import viteConfig from "../vite.config";
+[16:23:36.489]         ╵                        ~~~~~~~~~~~~~~~~
+[16:23:36.490] 
+[16:23:36.491] ✘ [ERROR] Could not resolve "./data/products"
+[16:23:36.491] 
+[16:23:36.491]     server/routes.ts:6:31:
+[16:23:36.491]       6 │ import { sampleProducts } from "./data/products";
+[16:23:36.491]         ╵                                ~~~~~~~~~~~~~~~~~
+[16:23:36.492] 
+[16:23:36.493] 2 errors
+[16:23:36.495] /vercel/path0/node_modules/esbuild/lib/main.js:1477
+[16:23:36.495]   let error = new Error(text);
+[16:23:36.496]               ^
+[16:23:36.496] 
+[16:23:36.496] Error: Build failed with 2 errors:
+[16:23:36.496] server/routes.ts:6:31: ERROR: Could not resolve "./data/products"
+[16:23:36.496] server/vite.ts:6:23: ERROR: Could not resolve "../vite.config"
+[16:23:36.496]     at failureErrorWithLog (/vercel/path0/node_modules/esbuild/lib/main.js:1477:15)
+[16:23:36.496]     at /vercel/path0/node_modules/esbuild/lib/main.js:946:25
+[16:23:36.496]     at /vercel/path0/node_modules/esbuild/lib/main.js:898:52
+[16:23:36.497]     at buildResponseToResult (/vercel/path0/node_modules/esbuild/lib/main.js:944:7)
+[16:23:36.497]     at /vercel/path0/node_modules/esbuild/lib/main.js:971:16
+[16:23:36.497]     at responseCallbacks.<computed> (/vercel/path0/node_modules/esbuild/lib/main.js:623:9)
+[16:23:36.497]     at handleIncomingPacket (/vercel/path0/node_modules/esbuild/lib/main.js:678:12)
+[16:23:36.497]     at Socket.readFromStdout (/vercel/path0/node_modules/esbuild/lib/main.js:601:7)
+[16:23:36.497]     at Socket.emit (node:events:518:28)
+[16:23:36.497]     at addChunk (node:internal/streams/readable:561:12) {
+[16:23:36.498]   errors: [Getter/Setter],
+[16:23:36.498]   warnings: [Getter/Setter]
+[16:23:36.498] }
+[16:23:36.500] 
+[16:23:36.500] Node.js v22.18.0
+[16:23:36.503] Copying backend to api directory...
+[16:23:36.505] cp: cannot stat 'dist/index.js': No such file or directory
+[16:23:36.505] Build complete!
+[16:23:36.505] Frontend built to: dist/public
+[16:23:36.505] Backend copied to: api/index.js
+[16:23:36.506] ✗ Frontend build failed
+[16:23:36.510] Error: Command "./build.sh" exited with 1

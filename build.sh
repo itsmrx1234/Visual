@@ -2,14 +2,14 @@
 # Build script for Vercel deployment
 
 echo "Building frontend..."
-vite build
+npx vite build --config vite.config.ts --outDir dist/public --emptyOutDir
 
 echo "Building backend..."
 node build-server.js
 
 echo "Copying backend to api directory..."
 mkdir -p api
-cp dist/index.js api/index.js
+cp dist/production.js api/index.js
 
 echo "Build complete!"
 echo "Frontend built to: dist/public"
