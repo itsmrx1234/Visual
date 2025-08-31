@@ -2,11 +2,14 @@
 # Build script for Vercel deployment
 
 echo "Building frontend..."
-npm run build
+vite build
+
+echo "Building backend..."
+node build-server.js
 
 echo "Build complete!"
 echo "Frontend built to: dist/public"
-echo "Backend ready at: server/index.ts"
+echo "Backend built to: dist/index.js"
 
 # Verify build output
 if [ -d "dist/public" ]; then
@@ -17,10 +20,11 @@ else
     exit 1
 fi
 
-if [ -f "server/index.ts" ]; then
-    echo "✓ Backend entry point exists"
+if [ -f "dist/index.js" ]; then
+    echo "✓ Backend build successful"
+    ls -la dist/index.js
 else
-    echo "✗ Backend entry point missing"
+    echo "✗ Backend build failed"
     exit 1
 fi
 

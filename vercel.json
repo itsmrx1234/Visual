@@ -20,7 +20,7 @@
       "dest": "/dist/public/$1"
     }
   ],
-  "buildCommand": "npm run build",
+  "buildCommand": "./build.sh",
   "outputDirectory": "dist/public",
   "installCommand": "npm install",
   "framework": null

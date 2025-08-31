@@ -1,0 +1,49 @@
+[14:50:11.902] Running build in Washington, D.C., USA (East) – iad1
+[14:50:11.902] Build machine configuration: 2 cores, 8 GB
+[14:50:11.917] Cloning github.com/itsmrx1234/Visual (Branch: main, Commit: fcff765)
+[14:50:12.289] Previous build caches not available
+[14:50:12.429] Cloning completed: 511.000ms
+[14:50:12.461] Found .vercelignore
+[14:50:12.478] Removed 96 ignored files defined in .vercelignore
+[14:50:12.478]   /.git/config
+[14:50:12.478]   /.git/description
+[14:50:12.478]   /.git/FETCH_HEAD
+[14:50:12.478]   /.git/HEAD
+[14:50:12.478]   /.git/hooks/applypatch-msg.sample
+[14:50:12.478]   /.git/hooks/commit-msg.sample
+[14:50:12.478]   /.git/hooks/fsmonitor-watchman.sample
+[14:50:12.478]   /.git/hooks/post-update.sample
+[14:50:12.478]   /.git/hooks/pre-applypatch.sample
+[14:50:12.479]   /.git/hooks/pre-commit.sample
+[14:50:12.742] Running "vercel build"
+[14:50:13.146] Vercel CLI 46.1.0
+[14:50:13.321] WARN! Due to `builds` existing in your configuration file, the Build and Development Settings defined in your Project Settings will not apply. Learn More: https://vercel.link/unused-build-settings
+[14:50:13.831] Installing dependencies...
+[14:50:16.735] npm warn deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+[14:50:17.185] npm warn deprecated npmlog@5.0.1: This package is no longer supported.
+[14:50:17.475] npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+[14:50:18.097] npm warn deprecated gauge@3.0.2: This package is no longer supported.
+[14:50:18.350] npm warn deprecated are-we-there-yet@2.0.0: This package is no longer supported.
+[14:50:19.347] npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+[14:50:19.410] npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+[14:50:19.645] npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+[14:50:19.713] npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+[14:50:19.714] npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+[14:50:31.722] 
+[14:50:31.723] added 611 packages in 18s
+[14:50:31.723] 
+[14:50:31.724] 71 packages are looking for funding
+[14:50:31.724]   run `npm fund` for details
+[14:50:32.269] Using TypeScript 5.6.3 (local user-provided)
+[14:51:19.151] server/routes.ts(4,37): error TS2307: Cannot find module '@shared/schema' or its corresponding type declarations.
+[14:51:19.152] server/routes.ts(6,32): error TS2307: Cannot find module './data/products' or its corresponding type declarations.
+[14:51:19.152] 
+[14:51:19.219] server/vite.ts(6,24): error TS2307: Cannot find module '../vite.config' or its corresponding type declarations.
+[14:51:19.219] server/vite.ts(49,9): error TS1343: The 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+[14:51:19.220] server/vite.ts(71,33): error TS1343: The 'import.meta' meta-property is only allowed when the '--module' option is 'es2020', 'es2022', 'esnext', 'system', 'node16', or 'nodenext'.
+[14:51:19.220] 
+[14:51:19.333] server/storage.ts(1,129): error TS2307: Cannot find module '@shared/schema' or its corresponding type declarations.
+[14:51:19.333] 
+[14:51:32.403] Build Completed in /vercel/output [1m]
+[14:51:32.717] Deploying outputs...
+[14:51:48.919] Error: A Serverless Function has exceeded the unzipped maximum size of 250 MB. : https://vercel.link/serverless-function-size
