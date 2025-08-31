@@ -1,4 +1,5 @@
 import { build } from 'esbuild';
+import { resolve } from 'path';
 
 await build({
   entryPoints: ['server/index.ts'],
@@ -13,11 +14,20 @@ await build({
     '@tensorflow/tfjs',
     'canvas',
     'bufferutil',
-    'utf-8-validate'
+    'utf-8-validate',
+    'express',
+    'multer'
   ],
+  alias: {
+    '@shared': resolve('./shared'),
+    '@': resolve('./client/src')
+  },
   minify: true,
   sourcemap: false,
-  logLevel: 'info'
+  logLevel: 'info',
+  define: {
+    'import.meta.dirname': '__dirname'
+  }
 });
 
 console.log('✅ Server build complete');

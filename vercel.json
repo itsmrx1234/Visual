@@ -1,19 +1,14 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "server/index.ts",
-      "use": "@vercel/node",
-      "config": {
-        "maxLambdaSize": "25mb",
-        "maxDuration": 30
-      }
+  "functions": {
+    "dist/index.js": {
+      "maxDuration": 30
     }
-  ],
+  },
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/server/index.ts"
+      "dest": "/dist/index.js"
     },
     {
       "src": "/(.*)",
@@ -22,6 +17,5 @@
   ],
   "buildCommand": "./build.sh",
   "outputDirectory": "dist/public",
-  "installCommand": "npm install",
-  "framework": null
+  "installCommand": "npm install"
 }
