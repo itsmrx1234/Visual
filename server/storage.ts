@@ -62,6 +62,9 @@ export class MemStorage implements IStorage {
     const product: Product = { 
       ...insertProduct, 
       id,
+      rating: insertProduct.rating ?? 4.0,
+      reviewCount: insertProduct.reviewCount ?? 0,
+      embeddings: insertProduct.embeddings ?? null,
       createdAt: new Date()
     };
     this.products.set(id, product);
@@ -73,6 +76,8 @@ export class MemStorage implements IStorage {
     const search: Search = { 
       ...insertSearch, 
       id,
+      imageUrl: insertSearch.imageUrl ?? null,
+      embeddings: insertSearch.embeddings ?? null,
       createdAt: new Date()
     };
     this.searches.set(id, search);

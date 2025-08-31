@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Grid, List, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import ProductCard from "./product-card";
+import ProductCard from "@/components/product-card";
 import { type SearchResult } from "@shared/schema";
 
 interface ProductGridProps {

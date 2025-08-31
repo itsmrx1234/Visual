@@ -5,6 +5,7 @@ import { searchRequestSchema } from "@shared/schema";
 import { mlService } from "./services/ml-service";
 import { sampleProducts } from "./data/products";
 import multer from "multer";
+import type { Request } from "express";
 
 // Configure multer for file uploads
 const upload = multer({
@@ -12,7 +13,7 @@ const upload = multer({
   limits: {
     fileSize: 10 * 1024 * 1024, // 10MB limit
   },
-  fileFilter: (req, file, cb) => {
+  fileFilter: (req: Request, file: Express.Multer.File, cb: multer.FileFilterCallback) => {
     if (file.mimetype.startsWith('image/')) {
       cb(null, true);
     } else {
@@ -59,7 +60,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Search similar products by image upload
-  app.post("/api/search/upload", upload.single('image'), async (req, res) => {
+  app.post("/api/search/upload", upload.single('image'), async (req: Request & { file?: Express.Multer.File }, res) => {
     try {
       if (!req.file) {
         return res.status(400).json({ message: "No image file provided" });
