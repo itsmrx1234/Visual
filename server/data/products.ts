@@ -11,7 +11,7 @@ export const sampleProducts: InsertProduct[] = [
     imageUrl: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
     rating: 4.5,
     reviewCount: 128,
-    embeddings: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+    embeddings: [0.6, 0.4, 0.3, 0.7, 0.2, 0.5, 0.8, 0.4, 0.6, 0.9]
   },
   {
     name: "Classic Denim Jacket",
@@ -21,7 +21,7 @@ export const sampleProducts: InsertProduct[] = [
     imageUrl: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
     rating: 4.2,
     reviewCount: 89,
-    embeddings: [0.2, 0.1, 0.4, 0.3, 0.6, 0.5, 0.8, 0.7, 1.0, 0.9]
+    embeddings: [0.4, 0.3, 0.5, 0.6, 0.2, 0.7, 0.5, 0.4, 0.8, 0.6]
   },
   {
     name: "Premium Cotton T-Shirt",
@@ -31,7 +31,7 @@ export const sampleProducts: InsertProduct[] = [
     imageUrl: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
     rating: 4.7,
     reviewCount: 245,
-    embeddings: [0.3, 0.4, 0.1, 0.2, 0.7, 0.8, 0.5, 0.6, 0.9, 1.0]
+    embeddings: [0.5, 0.6, 0.4, 0.7, 0.3, 0.8, 0.6, 0.5, 0.7, 0.4]
   },
   {
     name: "Designer Sneakers",

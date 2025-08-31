@@ -25,7 +25,7 @@ export default function ImageUpload({ onSearchStart, onSearchComplete, uploadedI
     mutationFn: async (file: File) => {
       const formData = new FormData();
       formData.append('image', file);
-      formData.append('minSimilarity', '0.7');
+      formData.append('minSimilarity', '0.3');
       formData.append('limit', '20');
       
       const response = await apiRequest('POST', '/api/search/upload', formData);
@@ -52,7 +52,7 @@ export default function ImageUpload({ onSearchStart, onSearchComplete, uploadedI
     mutationFn: async (url: string) => {
       const response = await apiRequest('POST', '/api/search/url', {
         imageUrl: url,
-        minSimilarity: 0.7,
+        minSimilarity: 0.3,
         limit: 20,
       });
       return response.json();

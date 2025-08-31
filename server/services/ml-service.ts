@@ -64,9 +64,13 @@ export class MLService {
     }
     
     const pixelCount = imageData.length / 3;
-    features.push(rSum / pixelCount / 255); // Normalized red average
-    features.push(gSum / pixelCount / 255); // Normalized green average
-    features.push(bSum / pixelCount / 255); // Normalized blue average
+    const rAvg = rSum / pixelCount / 255;
+    const gAvg = gSum / pixelCount / 255;
+    const bAvg = bSum / pixelCount / 255;
+    
+    features.push(rAvg); // Normalized red average
+    features.push(gAvg); // Normalized green average
+    features.push(bAvg); // Normalized blue average
     
     // Brightness and contrast measures
     const brightness = (rSum + gSum + bSum) / (pixelCount * 3 * 255);
@@ -81,12 +85,12 @@ export class MLService {
     }
     features.push(Math.sqrt(variance / pixelCount) / 255);
     
-    // Add some derived features
-    features.push(Math.abs(features[0] - features[1])); // R-G difference
-    features.push(Math.abs(features[1] - features[2])); // G-B difference
-    features.push(Math.abs(features[0] - features[2])); // R-B difference
-    features.push((features[0] + features[1] + features[2]) / 3); // Overall color balance
-    features.push(Math.max(features[0], features[1], features[2])); // Dominant channel
+    // Add some derived features with more realistic ranges
+    features.push(Math.abs(rAvg - gAvg)); // R-G difference
+    features.push(Math.abs(gAvg - bAvg)); // G-B difference
+    features.push(Math.abs(rAvg - bAvg)); // R-B difference
+    features.push((rAvg + gAvg + bAvg) / 3); // Overall color balance
+    features.push(Math.max(rAvg, gAvg, bAvg)); // Dominant channel
     
     return features;
   }

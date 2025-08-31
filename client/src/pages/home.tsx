@@ -32,7 +32,7 @@ export default function Home() {
     mutationFn: async (imageUrl: string) => {
       const response = await apiRequest('POST', '/api/search/url', {
         imageUrl,
-        minSimilarity: 0.7,
+        minSimilarity: 0.3,
         limit: 20,
       });
       return response.json();

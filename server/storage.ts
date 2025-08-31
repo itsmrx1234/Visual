@@ -87,7 +87,7 @@ export class MemStorage implements IStorage {
   async searchSimilarProducts(
     queryEmbeddings: number[], 
     category?: string, 
-    minSimilarity: number = 0.7, 
+    minSimilarity: number = 0.3, 
     limit: number = 20
   ): Promise<SearchResult[]> {
     const products = category 

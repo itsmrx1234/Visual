@@ -48,7 +48,7 @@ export const searchRequestSchema = z.object({
   imageUrl: z.string().url().optional(),
   imageData: z.string().optional(), // base64 encoded image
   category: z.string().optional(),
-  minSimilarity: z.number().min(0).max(1).default(0.7),
+  minSimilarity: z.number().min(0).max(1).default(0.3),
   limit: z.number().min(1).max(50).default(20),
 });
 

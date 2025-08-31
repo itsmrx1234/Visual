@@ -47,7 +47,7 @@ export default function ProductGrid({ results, onLoadMore, hasMore }: ProductGri
             <h3 className="text-2xl font-bold mb-2">Similar Products Found</h3>
             <p className="text-muted-foreground">
               <span data-testid="text-results-count">{sortedResults.length}</span> products found with{" "}
-              <span className="text-primary font-medium">75%+</span> similarity
+              <span className="text-primary font-medium">30%+</span> similarity
             </p>
           </div>
           

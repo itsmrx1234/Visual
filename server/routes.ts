@@ -66,7 +66,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ message: "No image file provided" });
       }
 
-      const { category, minSimilarity = 0.7, limit = 20 } = req.body;
+      const { category, minSimilarity = 0.3, limit = 20 } = req.body;
 
       // Extract features from uploaded image
       const embeddings = await mlService.extractFeatures(req.file.buffer);
