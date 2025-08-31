@@ -384,7 +384,7 @@ export const sampleProducts: InsertProduct[] = [
     description: "Multi-functional storage ottoman with soft upholstery and hidden compartment",
     category: "Furniture",
     price: 69.99,
-    imageUrl: "https://images.unsplash.com/photo-1586024229174-4293dd8af128?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+    imageUrl: "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
     rating: 4.1,
     reviewCount: 45,
     embeddings: [0.8, 0.2, 0.5, 1.0, 0.9, 0.3, 0.4, 0.1, 0.6, 0.7]
@@ -508,7 +508,7 @@ export const sampleProducts: InsertProduct[] = [
     description: "Programmable coffee maker with app control and thermal carafe",
     category: "Home",
     price: 129.99,
-    imageUrl: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+    imageUrl: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
     rating: 4.5,
     reviewCount: 267,
     embeddings: [0.1, 0.7, 0.6, 0.5, 0.4, 0.8, 0.9, 1.0, 0.2, 0.3]
@@ -548,7 +548,7 @@ export const sampleProducts: InsertProduct[] = [
     description: "Stainless steel electric kettle with temperature control and keep-warm function",
     category: "Home",
     price: 79.99,
-    imageUrl: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+    imageUrl: "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
     rating: 4.6,
     reviewCount: 234,
     embeddings: [0.5, 0.1, 1.0, 0.9, 0.8, 0.2, 0.3, 0.4, 0.6, 0.7]

@@ -1,0 +1,17 @@
+node_modules
+.env
+.env.local
+.git
+*.log
+client/src
+client/public
+server/data
+*.md
+.replit
+replit.nix
+tsconfig.json
+vite.config.ts
+tailwind.config.ts
+postcss.config.js
+.eslintrc.js
+.gitignore
